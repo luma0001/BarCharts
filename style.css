@@ -11,3 +11,19 @@
 
   height: 100px;
 }
+
+.minQuater {
+  background-color: green;
+}
+
+.belowHalf {
+  background-color: yellow;
+}
+
+.aboveHalf {
+  background-color: orangered;
+}
+
+.maxQuater {
+  background-color: red;
+}

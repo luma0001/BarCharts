@@ -29,7 +29,28 @@ function setQueLenght(bars) {
 
     const h = (data[i] / 32) * 100;
     currentBar.style.height = `${h}px`;
+
+    console.log(h);
+
+    stripClass(currentBar);
+
+    if (h > 74) {
+      currentBar.classList.add("maxQuater");
+    } else if (h > 49) {
+      currentBar.classList.add("aboveHalf");
+    } else if (h > 24) {
+      currentBar.classList.add("belowHalf");
+    } else if (24 > h) {
+      currentBar.classList.add("minQuater");
+    }
   }
+}
+
+function stripClass(currentBar) {
+  currentBar.classList.remove("maxQuater");
+  currentBar.classList.remove("aboveHalf");
+  currentBar.classList.remove("belowHalf");
+  currentBar.classList.remove("minQuater");
 }
 
 function updateQue() {
