@@ -9,13 +9,35 @@ const data = [
 ];
 
 function start() {
-  const bars = document.querySelectorAll(".bar");
+  //Genere en ny vædi hvert sekund
+  setInterval(updateQue, 1000);
 
+  //Kører setQueLength med de originale værdier i data
+  setQueLenght(document.querySelectorAll(".bar"));
+}
+
+//Går i gennem data-arrayet og sætter længden af barene påbaggrund deraf.
+function setQueLenght(bars) {
   for (let i = 0; i < 40; i++) {
     const currentBar = bars[i];
 
     const h = (data[i] / 32) * 100;
-
     currentBar.style.height = `${h}px`;
   }
+}
+
+function updateQue() {
+  //Genere et tilfældigt nummer
+  const newNumber = Math.floor(Math.random() * 34);
+  sortArray(newNumber);
+
+  const bars = document.querySelectorAll(".bar");
+  setQueLenght(bars);
+}
+
+//Funktion som tager et nyt nummer, sætter det ind på index 40(?) og fjerner vædien index 0
+//"pusher" det nye tal og shifter det første i rækken.
+function sortArray(newNumber) {
+  data.push(newNumber);
+  data.shift();
 }
