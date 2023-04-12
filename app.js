@@ -1,5 +1,11 @@
 "use strict";
 
+// Hvis du har tid, lyst og overskud, så giv dig i kast med en eller flere af disse:
+
+// Få søjlerne til at scrolle blødt til venstre, frem for at “hoppe” med hver ny måling.
+// Lad søjlerne have forskellige designs – ældre værdier kan være anderledes end nyere, fx kunne de være mere grå, jo længere mod venstre de kom – store værdier kan vises anderledes end små, fx kunne en søjle med 31 kunder være rød, mens en med kun 2 kunne være grøn.
+// Tilføj en hover-funktion der fortæller brugeren den præcise højde på hver søjle.
+
 window.addEventListener("load", start);
 
 const data = [
